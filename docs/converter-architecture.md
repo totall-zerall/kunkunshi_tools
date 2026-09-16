@@ -1,13 +1,13 @@
 # Architecture du convertisseur Python
 
-Convertisseur principal : `kkml2kunkunshi.py` (Python 3 autonome, ~1770 lignes). Ce dépôt est la source de vérité du code.
+Convertisseur principal : `kkml2svg.py` (Python 3 autonome, ~1770 lignes). Ce dépôt est la source de vérité du code.
 
 ## CLI
 
 ```bash
-python3 kkml2kunkunshi.py chanson.kkml -o chanson.svg
-python3 kkml2kunkunshi.py chanson.kkml            # -> chanson.svg
-cat chanson.kkml | python3 kkml2kunkunshi.py -     # stdin -> stdout
+python3 kkml2svg.py chanson.kkml -o chanson.svg
+python3 kkml2svg.py chanson.kkml            # -> chanson.svg
+cat chanson.kkml | python3 kkml2svg.py -     # stdin -> stdout
 ```
 
 Options : `-o output`, `-c cols`, `-l vertical|horizontal`
@@ -79,7 +79,7 @@ Options : `-o output`, `-c cols`, `-l vertical|horizontal`
 
 ## Convertisseur Portama → KKML
 
-Script séparé `portama_to_kkml.py` (script autonome).
+Script séparé `portama2kkml.py` (script autonome).
 
 - Mapping PUA → kanji (voir [format Portama](portama-format.md))
 - Paires (main, straddle) → noires, croches (A/B) ou shuffles (A:B) selon `isSmall`

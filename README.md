@@ -7,26 +7,26 @@ Pipeline : JSON Portama → KKML → SVG.
 
 ## Scripts
 
-### portama_to_kkml.py
+### portama2kkml.py
 
 Convertit un export JSON de Portama (portama.com/kunkun4) en KKML.
 
-    python3 portama_to_kkml.py input.json -o output.kkml
-    cat input.json | python3 portama_to_kkml.py - > output.kkml
+    python3 portama2kkml.py input.json -o output.kkml
+    cat input.json | python3 portama2kkml.py - > output.kkml
 
 Gère : mapping PUA→kanji, accordages (本調子, 二調子, 三調子), ornements
 (uchi-utu), paires main/straddle (noire, croche `A/B`, shuffle `A:B`),
 repères de répétition `|:` `:|`, paroles (`::lyrics`).
 
-### kkml2kunkunshi.py
+### kkml2svg.py
 
 Convertit un fichier KKML en tablature SVG. Layout vertical traditionnel
 (cases lues de haut en bas, colonnes de droite à gauche) ou horizontal
 (style songbook).
 
-    python3 kkml2kunkunshi.py chanson.kkml -o chanson.svg
-    python3 kkml2kunkunshi.py chanson.kkml          # -> chanson.svg
-    cat chanson.kkml | python3 kkml2kunkunshi.py -  # stdin -> stdout
+    python3 kkml2svg.py chanson.kkml -o chanson.svg
+    python3 kkml2svg.py chanson.kkml                  # -> chanson.svg
+    cat chanson.kkml | python3 kkml2svg.py -          # stdin -> stdout
 
 Options CLI : `-o/--output`, `-c/--cols`, `-l/--layout vertical|horizontal`.
 
